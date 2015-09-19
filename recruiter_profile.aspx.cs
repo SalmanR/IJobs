@@ -16,11 +16,15 @@ public partial class recruiter_profile : System.Web.UI.Page
 {
     SqlConnection con = null;
     SqlDataAdapter adp = null;
-
+    string RName;
     protected void Page_Load(object sender, EventArgs e)
     {
-        string RName = Session["RName"].ToString();
-        con = new SqlConnection("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\Pratik\\Desktop\\Jobadda\\App_Data\\JobportalDB.mdf;Integrated Security=True;User Instance=True");
+        if (Session["RName"] != null)
+        {
+            RName = Session["RName"].ToString();
+        }
+         
+        con = new SqlConnection("Data Source=ANAH-PC;Initial Catalog=Jobbada;Integrated Security=True;");
         con.Open();
 
         string query = "select * from Company where username='" + RName + "'";

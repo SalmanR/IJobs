@@ -26,7 +26,7 @@ public partial class recruiter_login : System.Web.UI.Page
     {
         bool Flag = false;
 
-        con = new SqlConnection("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\Pratik\\Desktop\\Jobadda\\App_Data\\JobportalDB.mdf;Integrated Security=True;User Instance=True");
+        con = new SqlConnection("Data Source=ANAH-PC;Initial Catalog=Jobbada;Integrated Security=True;");
         con.Open();
 
         cmd = new SqlCommand();
